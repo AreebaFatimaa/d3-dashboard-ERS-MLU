@@ -4,13 +4,14 @@ A D3.js dashboard that visualizes the rise of **defense & industrial** land
 alongside the concurrent change in **forest**, **cropland**, or **grassland** across
 the 48 contiguous U.S. states from 1945 to 2017.
 
+A very specific tool, for a very specific purpose. 
+
 > **Concurrent change, not direct conversion.** The data records *stocks* of each
 > land category at each survey year. It does not say that any acreage of forest
-> "became" defense. The dashboard shows what changed *at the same time* in the same
-> state — read causality at your own peril.
+> "became" defense. 
 
 ## What the dashboard shows
-
+![alt text](image.png)
 - **Forty-eight state slides** in a carousel, alphabetical by state name, with
   prev / next buttons, a clickable dot strip, and ← / → keyboard arrows.
 - **Two stacked U.S. maps per slide.** The top map is fixed to *defense &
@@ -22,7 +23,7 @@ the 48 contiguous U.S. states from 1945 to 2017.
   - **Bubble cartogram** — one circle per state at the state centroid, radius
     proportional to acreage.
   - **Choropleth** — state polygons colored by acreage, with optional pattern fills
-    (stripes, dots, hatch) for accessibility.
+    (stripes, dots, hatch).
 - **Active state glow.** The current carousel state is wrapped in a soft drop-shadow
   halo whose color you choose in the highlight picker.
 - **Per-state time-series small-multiples** beneath the maps. Two stacked tiny line
@@ -31,7 +32,7 @@ the 48 contiguous U.S. states from 1945 to 2017.
   with a vertical guide and a gold dot, with the value rendered top-right.
 - **Time controls.** A year slider that snaps to the 16 ERS years (1945, 1949, 1954,
   1959, 1964, 1969, 1974, 1978, 1982, 1987, 1992, 1997, 2002, 2007, 2012, 2017),
-  plus play / pause, 0.5× / 1× / 2× speed, and a two-handle range clamp.
+  plus play / pause, 0.5× / 1× / 2× speed, and a two-handle range clamp. Maybe at a later stage I will add a export an .mp4 or .aep file. 
 - **Color & opacity controls** — three palette presets per layer, a custom color
   picker per layer, per-layer opacity, and a configurable highlight color.
 - **Scale controls** — linear, square-root, or log scale (log clamps the domain to
@@ -51,11 +52,6 @@ USDA Economic Research Service, *Major Land Uses* (release dated 2024-09-13). Th
 prepared CSV at `data/ers_mlu_state_year_48_states_wide.csv` covers 16 ERS survey
 years × 48 contiguous states.
 
-## Run locally
+## Credit
 
-```bash
-python3 -m http.server 8000
-```
-
-Open <http://localhost:8000/>. (Browsers block `fetch()` from `file://`, so the
-dashboard needs to be served over HTTP.)
+If you end up using this tool, please credit me and send me an email sharing what you did with it: af3618@columbia.edu
