@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Defense vs. Forest, Cropland & Grassland — 48 States, 1945–2017</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="page-header">
+    <h1>Concurrent change in U.S. land use, 1945&ndash;2017</h1>
+    <p class="caveat">
+      Defense &amp; industrial land vs. forest, cropland or grassland across the 48 contiguous states.
+      <strong>Concurrent change, not direct conversion.</strong>
+    </p>
+  </header>
+
+  <main id="carousel" class="carousel" aria-label="State-by-state land use carousel">
+    <button class="nav-btn nav-prev" id="navPrev" aria-label="Previous state">&larr;</button>
+    <button class="nav-btn nav-next" id="navNext" aria-label="Next state">&rarr;</button>
+
+    <div class="slide" id="slide">
+      <h2 class="state-title" id="stateTitle">&nbsp;</h2>
+
+      <div class="cards">
+        <section class="card" data-card="top">
+          <div class="card-header">
+            <span class="card-label" id="topLabel">Defense &amp; industrial</span>
+            <div class="export-toolbar" data-target="top">
+              <button class="export-btn" data-kind="svg" aria-label="Export top chart as SVG">SVG &darr;</button>
+              <button class="export-btn" data-kind="png" aria-label="Export top chart as PNG">PNG &darr;</button>
+            </div>
+          </div>
+          <svg class="map" id="mapTop" viewBox="0 0 975 660" preserveAspectRatio="xMidYMid meet"
+               role="img" aria-label="Defense and industrial land map"></svg>
+          <div class="legend" id="legendTop"></div>
+        </section>
+
+        <section class="card" data-card="bottom">
+          <div class="card-header">
+            <span class="card-label" id="bottomLabel">Forest-use land</span>
+            <div class="export-toolbar" data-target="bottom">
+              <button class="export-btn" data-kind="svg" aria-label="Export bottom chart as SVG">SVG &darr;</button>
+              <button class="export-btn" data-kind="png" aria-label="Export bottom chart as PNG">PNG &darr;</button>
+            </div>
+          </div>
+          <svg class="map" id="mapBottom" viewBox="0 0 975 660" preserveAspectRatio="xMidYMid meet"
+               role="img" aria-label="Bottom-metric land map"></svg>
+          <div class="legend" id="legendBottom"></div>
+        </section>
+      </div>
+
+      <div class="multiples" aria-label="Per-state time series">
+        <svg class="multiple" id="multTop" viewBox="0 0 480 110" preserveAspectRatio="none"
+             role="img" aria-label="Defense and industrial time series"></svg>
+        <svg class="multiple" id="multBottom" viewBox="0 0 480 110" preserveAspectRatio="none"
+             role="img" aria-label="Bottom-metric time series"></svg>
+      </div>
+
+      <div class="slide-footer">
+        <button class="export-combined" id="exportCombinedSvg">Export combined SVG &darr;</button>
+        <button class="export-combined" id="exportCombinedPng">Export combined PNG &darr;</button>
+      </div>
+    </div>
+
+    <div class="dots" id="dots" role="tablist" aria-label="State selector"></div>
+  </main>
+
+  <div id="tooltip" class="tooltip" role="status" aria-live="polite"></div>
+
+  <footer class="debug-panel" id="debugPanel" aria-label="Debug panel">
+    <div class="dp-row">
+      <details class="dp-group" open>
+        <summary>VIZ TYPE</summary>
+        <div class="dp-body" id="grpViz"></div>
+      </details>
+      <details class="dp-group" open>
+        <summary>TIME</summary>
+        <div class="dp-body" id="grpTime"></div>
+      </details>
+      <details class="dp-group" open>
+        <summary>BOTTOM MAP CATEGORY</summary>
+        <div class="dp-body" id="grpCategory"></div>
+      </details>
+      <details class="dp-group">
+        <summary>COLOR &amp; OPACITY</summary>
+        <div class="dp-body" id="grpColor"></div>
+      </details>
+      <details class="dp-group">
+        <summary>SPIKE &amp; PATTERN STYLING</summary>
+        <div class="dp-body" id="grpStyle"></div>
+      </details>
+      <details class="dp-group">
+        <summary>SCALE &amp; AXIS</summary>
+        <div class="dp-body" id="grpScale"></div>
+      </details>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+  <script src="./main.js"></script>
+</body>
+</html>
